@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { LogOut, Search } from 'lucide-react';
 import { fetchUsers, deleteUser, updateUser } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import { logout } from '../services/authService';  // Import logout function
+import { logout } from '../services/authService';
 import UserCard from './UserCard';
 import UserModal from './UserModal';
 import '../styles/UserList.css';
