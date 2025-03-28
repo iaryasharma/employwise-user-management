@@ -1,0 +1,114 @@
+:root {
+    --white: #ffffff;
+    --text-color: #2c2c2c;
+    --gray-light: #666;
+    --gray-border: #e0e0e0;
+    --edit-color: #3498db;
+    --delete-color: #e74c3c;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+.user-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+.user-avatar {
+    width: clamp(80px, 25vw, 100px);
+    height: clamp(80px, 25vw, 100px);
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.user-details {
+    margin-bottom: 1rem;
+}
+
+.user-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: clamp(1rem, 4vw, 1.25rem);
+}
+
+.user-details p {
+    margin: 0;
+    color: var(--gray-light);
+    font-size: clamp(0.875rem, 3vw, 1rem);
+}
+
+.user-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+.edit-button, .delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.edit-button {
+    background-color: var(--edit-color);
+    color: var(--white);
+}
+
+.delete-button {
+    background-color: var(--delete-color);
+    color: var(--white);
+}
+
+.edit-button:hover, .delete-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 480px) {
+    .user-card {
+        width: 100%;
+        max-width: none;
+        padding: 1rem;
+    }
+
+    .user-avatar {
+        width: clamp(60px, 25vw, 80px);
+        height: clamp(60px, 25vw, 80px);
+    }
+
+    .user-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .edit-button, .delete-button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
